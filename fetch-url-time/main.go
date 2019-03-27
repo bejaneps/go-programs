@@ -33,7 +33,6 @@ func fetch(uri string, ch chan<- string) {
 		ch <- fmt.Sprint(err) // send to channel ch
 		return
 	}
-
 	f, err := os.Create(url.QueryEscape(uri[7:]))
 	if err != nil {
 		ch <- err.Error()

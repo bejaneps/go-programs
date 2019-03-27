@@ -8,16 +8,8 @@ import (
 )
 
 func printRunesRange(min, max int) {
-	letters := make([]rune, max-min)
-
 	for i := 0; i+min < max; i++ {
-		letters[i] = rune(i + min)
-	}
-
-	for i, val := range letters {
-		if n, err := fmt.Printf("%d: %q\n", i+min, val); n == 0 || err != nil {
-			log.Fatalf("%v\n", err)
-		}
+		fmt.Printf("%d: %q\n", i, rune(i+min))
 	}
 }
 
